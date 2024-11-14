@@ -1,0 +1,215 @@
+<html>
+  <head>
+    <title>EduSmart</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: rgb(44, 171, 250);
+        color: white;
+      }
+
+      nav {
+        background-color: #333;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .content-section {
+        display: none;
+      }
+
+      .content-section.active {
+        display: block;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 10px;
+        border-collapse: collapse;
+      }
+
+      table, th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #555;
+        color: white;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      form input, form select {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+      }
+
+      form button {
+        display: block;
+        width: 20%;
+        margin-bottom: 10px;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>EduSmart</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('content')">Content</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="home" class="content-section active">
+        <h2>Selamat Datang di EduSmart</h2>
+        <p>EduSmart adalah platform pendidikan online yang menyediakan beragam kursus dan sumber belajar bagi semua kalangan, mulai dari pelajar hingga profesional.</p>
+        <p>Temukan kursus favorit Anda dan mulailah belajar dengan metode interaktif kami.</p><br>
+        <p><strong>Informasi Terkini:</strong> Pendaftaran untuk kursus musim semi 2024 telah dibuka! Daftarkan diri Anda segera.</p>
+      </section>
+
+      <section id="content" class="content-section">
+          <h2>Kursus Populer</h2>
+          <table>
+            <tr>
+              <th>Kursus</th>
+              <th>Deskripsi</th>
+              <th>Durasi</th>
+              <th>Biaya</th>
+            </tr>
+            <tr>
+              <td>Pengantar Pemrograman</td>
+              <td>Kursus pemrograman dasar menggunakan Python.</td>
+              <td>10 Minggu</td>
+              <td>Rp.1,000,000</td>
+            </tr>
+            <tr>
+              <td>Desain Grafis</td>
+              <td>Mempelajari prinsip-prinsip desain grafis dan penggunaan software desain.</td>
+              <td>8 Minggu</td>
+              <td>Rp.850,000</td>
+            </tr>
+            <tr>
+              <td>Manajemen Proyek</td>
+              <td>Dasar-dasar manajemen proyek dan penerapannya dalam berbagai industri.</td>
+              <td>12 Minggu</td>
+              <td>Rp.1,200,000</td>
+            </tr>
+          </table><br>
+        
+          <h3>Formulir Pendaftaran</h3>
+          <form id="registrationForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="course">Kursus yang Diminati:</label>
+            <select id="course" name="course" required>
+              <option value="pemrograman">Pengantar Pemrograman</option>
+              <option value="desain">Desain Grafis</option>
+              <option value="manajemen">Manajemen Proyek</option>
+            </select><br>
+        
+            <button type="button" onclick="submitForm()">Daftar</button>
+          </form>
+          <p id="formResponse"></p>
+        </section>
+        
+      <section id="about" class="content-section">
+        <h2>Tentang Kami</h2><br>
+        <p>EduSmart didirikan dengan visi memberikan akses pendidikan berkualitas tinggi bagi semua orang. Kami percaya bahwa setiap orang berhak mendapatkan kesempatan untuk belajar dan berkembang.</p>
+        <p>Hubungi kami melalui:</p><br>
+        <p>Email: miftahulbachtiarrafli@gmail.com</p>
+        <p>Telepon: +62 896 1637 6167</p>
+        <p>Atau kunjungi sosial media kami untuk informasi terbaru:</p>
+        <ul>
+          <li><a href="https://facebook.com/rafli.m.bachtiar" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/rafli_m_b/" target="_blank">Instagram</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 EduSmart.</p>
+    </footer>
+
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+      }
+
+      function submitForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const course = document.getElementById('course').value;
+
+        if (name && email && course) {
+          document.getElementById('formResponse').innerText = 
+            `Terima kasih, ${name}! Anda telah mendaftar untuk kursus ${course}.`;
+        } else {
+          document.getElementById('formResponse').innerText = 
+            "Mohon lengkapi semua data pada formulir.";
+        }
+      }
+    </script>
+  </body>
+</html>

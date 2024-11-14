@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Portofolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      header, section, footer {
+        padding: 20px;
+      }
+
+      #hero {
+        background-color: #3a7ca5;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      #hero h1 {
+        font-size: 2.5em;
+      }
+
+      #hero p {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      #about {
+        background-color: #f4f4f4;
+        padding: 50px 20px;
+      }
+
+      #about h2 {
+        text-align: center;
+      }
+
+      #about .content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      #projects {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      #projects h2 {
+        margin-bottom: 20px;
+      }
+
+      .project-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .project {
+        background-color: #eaeaea;
+        padding: 15px;
+        width: calc(33% - 20px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #contact {
+        background-color: #3a7ca5;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      #contact a {
+        color: #ffd700;
+        text-decoration: none;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="hero">
+      <h1>Halo, Saya Rafli</h1>
+      <p>Saya adalah mahasiswa PHB dengan keahlian dalam bidang informatika</p>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2><br>
+      <div class="content">
+        <p>Perkenalkan nama saya adalah Rafli Miftahul Bachtiar yang sedang menempuh pendidikan D4 di Politeknik Harapan Bersama bidang Teknik Informatika.</p>
+        <p><strong>Skill :</strong> Menguasai bahasa pemrograman Python dan mampu menggunakan software Figma dan CorelDraw.</p>
+        <p><strong>Pengalaman :</strong> Memiliki pengalaman menjadi anggota organisasi majalah dibidang design grafis.</p>
+        <p><strong>Kesukaan :</strong> Berkompetisi dalam game online.</p>
+        <p><strong>Tujuan :</strong> Mencari pekerjaan yang sesuai dengan bidang yang saya kuasai.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>My Project</h2>
+      <div class="project-list">
+        <div class="project">
+          <h3>Desain Grafis dan Multimedia</h3>
+          <p>Dokumen pembuatan game 2d platformer. <a href="https://docs.google.com/document/d/19Oa9PudC3dzxQflHSY4IrUqCxhcP_SIUIotL5ysC9yU/edit?tab=t.0#heading=h.ogtdt0xsznj1">Lihat Projek</a></p>
+        </div>
+        <div class="project">
+          <h3>Pemrograman Komputer 1</h3>
+          <p>Pembuatan program point of sales Netbeans. <a href="https://github.com/RafliMB/ProgramPOS">Lihat Projek</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:miftahulbachtiarrafli@gmail.com">miftahulbachtiarrafli@google.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/rafli-miftahul-bachtiar-49564a291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/rafli-miftahul-bachtiar</a></p>
+      <p>GitHub: <a href="https://github.com/RafliMB" target="_blank">github.com/RafliMB</a></p>
+      <p>Telepon: +62 896-1637-6167</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Rafli Miftahul Bachtiar.</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
